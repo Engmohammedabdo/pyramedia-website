@@ -46,11 +46,13 @@ function isRTL() {
 }
 
 function asset($path) {
-    return SITE_URL . '/public/' . ltrim($path, '/');
+    // Use relative path for assets to work on any domain
+    return '/public/' . ltrim($path, '/');
 }
 
 function url($path = '') {
-    return SITE_URL . '/' . ltrim($path, '/');
+    // Use relative path for URLs to work on any domain
+    return '/' . ltrim($path, '/');
 }
 
 function redirect($url) {
