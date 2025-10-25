@@ -26,8 +26,8 @@ try {
     echo "<p>✅ Tables created successfully!</p>";
     
     // Insert admin user (password: admin123)
-    $stmt = $db->prepare("INSERT INTO admin_users (username, password, email, role) VALUES (?, ?, ?, ?)");
-    $stmt->execute(['admin', password_hash('admin123', PASSWORD_DEFAULT), 'admin@pyramedia.com', 'admin']);
+    $stmt = $db->prepare("INSERT INTO admin_users (username, password, email, full_name, role) VALUES (?, ?, ?, ?, ?)");
+    $stmt->execute(['admin', password_hash('admin123', PASSWORD_DEFAULT), 'admin@pyramedia.com', 'Administrator', 'admin']);
     echo "<p>✅ Admin user created (username: admin, password: admin123)</p>";
     
     // Insert settings
