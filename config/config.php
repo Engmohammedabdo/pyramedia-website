@@ -72,7 +72,7 @@ function isLoggedIn() {
 
 function requireLogin() {
     if (!isLoggedIn()) {
-        redirect(ADMIN_URL . '/login.php');
+        redirect('/admin/login.php');
     }
 }
 
