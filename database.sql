@@ -1,8 +1,7 @@
 -- Pyramedia Database Schema
 -- Created: 2025-10-25
 
-CREATE DATABASE IF NOT EXISTS pyramedia CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE pyramedia;
+-- Using existing database from connection
 
 -- Settings Table
 CREATE TABLE IF NOT EXISTS settings (
