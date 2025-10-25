@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt = $db->prepare("UPDATE admin_users SET last_login = NOW() WHERE id = ?");
             $stmt->execute([$user['id']]);
             
-            redirect(ADMIN_URL . '/index.php');
+            redirect('/admin/index.php');
         } else {
             $error = 'Invalid username or password';
         }
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // If already logged in, redirect to dashboard
 if (isLoggedIn()) {
-    redirect(ADMIN_URL . '/index.php');
+    redirect('/admin/index.php');
 }
 ?>
 <!DOCTYPE html>

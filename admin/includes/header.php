@@ -77,29 +77,29 @@
             <small class="text-white-50">Admin Dashboard</small>
         </div>
         <div class="sidebar-menu">
-            <a href="<?= ADMIN_URL ?>/index.php" class="<?= basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '' ?>">
+            <a href="<?= '/admin' ?>/index.php" class="<?= basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '' ?>">
                 <i class="bi bi-speedometer2"></i> Dashboard
             </a>
-            <a href="<?= ADMIN_URL ?>/services.php" class="<?= basename($_SERVER['PHP_SELF']) == 'services.php' ? 'active' : '' ?>">
+            <a href="<?= '/admin' ?>/services.php" class="<?= basename($_SERVER['PHP_SELF']) == 'services.php' ? 'active' : '' ?>">
                 <i class="bi bi-gear"></i> Services
             </a>
-            <a href="<?= ADMIN_URL ?>/projects.php" class="<?= basename($_SERVER['PHP_SELF']) == 'projects.php' ? 'active' : '' ?>">
+            <a href="<?= '/admin' ?>/projects.php" class="<?= basename($_SERVER['PHP_SELF']) == 'projects.php' ? 'active' : '' ?>">
                 <i class="bi bi-briefcase"></i> Projects
             </a>
-            <a href="<?= ADMIN_URL ?>/posts.php" class="<?= basename($_SERVER['PHP_SELF']) == 'posts.php' ? 'active' : '' ?>">
+            <a href="<?= '/admin' ?>/posts.php" class="<?= basename($_SERVER['PHP_SELF']) == 'posts.php' ? 'active' : '' ?>">
                 <i class="bi bi-file-text"></i> Blog Posts
             </a>
-            <a href="<?= ADMIN_URL ?>/messages.php" class="<?= basename($_SERVER['PHP_SELF']) == 'messages.php' ? 'active' : '' ?>">
+            <a href="<?= '/admin' ?>/messages.php" class="<?= basename($_SERVER['PHP_SELF']) == 'messages.php' ? 'active' : '' ?>">
                 <i class="bi bi-envelope"></i> Messages
             </a>
-            <a href="<?= ADMIN_URL ?>/settings.php" class="<?= basename($_SERVER['PHP_SELF']) == 'settings.php' ? 'active' : '' ?>">
+            <a href="<?= '/admin' ?>/settings.php" class="<?= basename($_SERVER['PHP_SELF']) == 'settings.php' ? 'active' : '' ?>">
                 <i class="bi bi-sliders"></i> Settings
             </a>
             <hr style="border-color: rgba(255,255,255,0.1);">
             <a href="<?= url() ?>" target="_blank">
                 <i class="bi bi-box-arrow-up-right"></i> View Website
             </a>
-            <a href="<?= ADMIN_URL ?>/logout.php">
+            <a href="<?= '/admin' ?>/logout.php">
                 <i class="bi bi-box-arrow-right"></i> Logout
             </a>
         </div>

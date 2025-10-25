@@ -16,7 +16,7 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
         $stmt->execute([$id]);
     }
     
-    redirect(ADMIN_URL . '/messages.php');
+    redirect('/admin/messages.php');
 }
 
 // Get all messages
