@@ -4,11 +4,24 @@
  * Pyramedia Website
  */
 
-// Database credentials from environment variables or defaults
-define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
-define('DB_NAME', getenv('DB_NAME') ?: 'pyramedia');
-define('DB_USER', getenv('DB_USER') ?: 'root');
-define('DB_PASS', getenv('DB_PASS') ?: '');
+// Parse DATABASE_URL if available (Coolify format)
+$databaseUrl = getenv('DATABASE_URL');
+
+if ($databaseUrl) {
+    // Parse mysql://user:pass@host:port/dbname
+    $parsed = parse_url($databaseUrl);
+    define('DB_HOST', $parsed['host'] ?? 'localhost');
+    define('DB_USER', $parsed['user'] ?? 'root');
+    define('DB_PASS', $parsed['pass'] ?? '');
+    define('DB_NAME', ltrim($parsed['path'] ?? '/pyramedia', '/'));
+} else {
+    // Fallback to individual env vars or defaults
+    define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
+    define('DB_NAME', getenv('DB_NAME') ?: 'pyramedia');
+    define('DB_USER', getenv('DB_USER') ?: 'root');
+    define('DB_PASS', getenv('DB_PASS') ?: '');
+}
+
 define('DB_CHARSET', 'utf8mb4');
 
 class Database {
@@ -26,7 +39,7 @@ class Database {
             
             $this->connection = new PDO($dsn, DB_USER, DB_PASS, $options);
         } catch(PDOException $e) {
-            die("Connection failed: " . $e->getMessage());
+            die("Connection failed: " . $e->getMessage() . "<br>Host: " . DB_HOST . "<br>DB: " . DB_NAME . "<br>User: " . DB_USER);
         }
     }
     
