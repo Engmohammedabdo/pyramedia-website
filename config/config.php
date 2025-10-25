@@ -56,6 +56,8 @@ function url($path = '') {
 }
 
 function redirect($url) {
+    // Remove localhost from URLs to make them work on any domain
+    $url = str_replace('http://localhost', '', $url);
     header('Location: ' . $url);
     exit;
 }
